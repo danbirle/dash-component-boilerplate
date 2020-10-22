@@ -23,14 +23,14 @@
           "name": "string"
         },
         "required": false,
-        "description": "The token used to identify any requests from the dash application."
+        "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
       },
       "setProps": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+        "description": "The token used to identify any requests from the dash application."
       }
     }
   }

@@ -1,6 +1,6 @@
 Package: dapitokc
 Title: Passes a token from any browser to dash server
-Version: 0.0.1
+Version: 0.0.2
 Description: Passes a token from any browser to dash server
 Depends: R (>= 3.0.2)
 Imports: 

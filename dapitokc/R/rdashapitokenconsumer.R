@@ -1,8 +1,8 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-rdashapitokenconsumer <- function(originEndpoint=NULL, id=NULL) {
+rdashapitokenconsumer <- function(originEndpoint=NULL, id=NULL, authToken=NULL) {
     
-    props <- list(originEndpoint=originEndpoint, id=id)
+    props <- list(originEndpoint=originEndpoint, id=id, authToken=authToken)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -10,7 +10,7 @@ rdashapitokenconsumer <- function(originEndpoint=NULL, id=NULL) {
         props = props,
         type = 'dashapitokenconsumer',
         namespace = 'dapitokc',
-        propNames = c('originEndpoint', 'id'),
+        propNames = c('originEndpoint', 'id', 'authToken'),
         package = 'dapitokc'
         )
 
