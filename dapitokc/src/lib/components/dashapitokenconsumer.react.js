@@ -7,10 +7,11 @@ export default class dashapitokenconsumer extends Component {
     }
 
     componentDidMount() {
+        const {setProps, originEndpoint} = this.props;
         window.addEventListener("message", (event) => {
             console.log('@R Debug event from origin: ', event);
-            if (event.origin === this.props.originEndpoint && event.data.toString().includes('Token ')) {
-                this.setProps({ token: event.data })
+            if (event.origin === originEndpoint && event.data.toString().includes('Token ')) {
+                setProps({ authToken: event.data })
             }
         }, false);
     }

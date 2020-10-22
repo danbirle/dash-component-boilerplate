@@ -2,7 +2,7 @@
 name = "Dapitokc"
 uuid = "1b08a953-4be3-4667-9a23-e7c8e38740a9"
 authors = ["rdanb <razvan.birle@gmail.com>"]
-version = "0.0.2"
+version = "0.0.4"
 
 [deps]
 Dash = "1b08a953-4be3-4667-9a23-3db579824955"

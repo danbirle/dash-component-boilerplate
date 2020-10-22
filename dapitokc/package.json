@@ -1,6 +1,6 @@
 {
   "name": "dapitokc",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Passes a token from any browser to dash server",
   "repository": {
     "type": "git",
