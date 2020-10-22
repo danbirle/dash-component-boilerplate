@@ -9,15 +9,16 @@ class dashapitokenconsumer(Component):
 
 Keyword arguments:
 - originEndpoint (string; required): Origins that may pass the authentication token are limited to IoTBox frontend only, for now
-- id (string; optional): The ID used to identify this component in Dash callbacks."""
+- id (string; optional): The ID used to identify this component in Dash callbacks.
+- authToken (string; optional): The token used to identify any requests from the dash application."""
     @_explicitize_args
-    def __init__(self, originEndpoint=Component.REQUIRED, id=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['originEndpoint', 'id']
+    def __init__(self, originEndpoint=Component.REQUIRED, id=Component.UNDEFINED, authToken=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['originEndpoint', 'id', 'authToken']
         self._type = 'dashapitokenconsumer'
         self._namespace = 'dapitokc'
-        self._valid_wildcard_attributes =            []
-        self.available_properties = ['originEndpoint', 'id']
-        self.available_wildcard_properties =            []
+        self._valid_wildcard_attributes = []
+        self.available_properties = ['originEndpoint', 'id', 'authToken']
+        self.available_wildcard_properties = []
 
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

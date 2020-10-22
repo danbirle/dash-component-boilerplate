@@ -4,14 +4,13 @@ import PropTypes from 'prop-types';
 export default class dashapitokenconsumer extends Component {
     constructor(props) {
         super(props);
-        this.state = { token: 'no token' }
     }
 
     componentDidMount() {
         window.addEventListener("message", (event) => {
             console.log('@R Debug event from origin: ', event);
             if (event.origin === this.props.originEndpoint && event.data.toString().includes('Token ')) {
-                this.setState({ token: event.data })
+                this.setProps({ token: event.data })
             }
         }, false);
     }
@@ -20,9 +19,7 @@ export default class dashapitokenconsumer extends Component {
         const {id} = this.props;
 
         return (
-            <div id={id}>
-                Token: {this.state.token} <br></br>
-            </div>
+            <div id={id}></div>
         );
     }
 }
@@ -37,5 +34,14 @@ dashapitokenconsumer.propTypes = {
     /**
      * The ID used to identify this component in Dash callbacks.
      */
-    id: PropTypes.string
+    id: PropTypes.string,
+    /**
+     * Dash-assigned callback that should be called to report property changes
+     * to Dash, to make them available for callbacks.
+     */
+    authToken: PropTypes.string,
+    /**
+     * The token used to identify any requests from the dash application.
+     */
+    setProps: PropTypes.func
 };

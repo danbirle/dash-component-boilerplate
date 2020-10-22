@@ -8,15 +8,16 @@ app = dash.Dash(__name__)
 app.layout = html.Div([
     dapitokc.dashapitokenconsumer(
         id='input',
-        originEndpoint='http://localhost:3000'
+        originEndpoint='http://localhost:3000',
+        authToken=''
     ),
     html.Div(id='output')
 ])
 
 
-@app.callback(Output('output', 'children'), [Input('input', 'originEndpoint')])
-def display_output(originEndpoint):
-    return 'Origin endpoint: {}'.format(originEndpoint)
+@app.callback(Output('output', 'children'), [Input('input', 'originEndpoint'), Input('input', 'authToken')])
+def display_output(originEndpoint, authToken):
+    return 'Origin endpoint: {}'.format(authToken)
 
 
 if __name__ == '__main__':
